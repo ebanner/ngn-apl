@@ -95,7 +95,11 @@ const abbrevs = {
   /* Misc */
   "key": "⌸",
 }
- 
+
+for (const [k, v] of Object.entries(abbrevs)) {
+  abbrevs[k[0].toUpperCase() + k.slice(1)] = v
+}
+
 document.getElementById('code').addEventListener('keydown', function(e) {
   if (e.key === ' ' || e.key === 'Enter') {
     const el = this
